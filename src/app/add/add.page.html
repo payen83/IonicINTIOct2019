@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="close()">
+        <ion-icon name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>Name</ion-label>
+      <ion-input type="text" [(ngModel)]="product.name"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Price</ion-label>
+      <ion-input type="text" [(ngModel)]="product.price"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-input type="text" [(ngModel)]="product.description"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Image URL</ion-label>
+      <ion-input type="text" [(ngModel)]="product.image"></ion-input>
+    </ion-item>
+  </ion-list>
+  
+  <img width="200" [src]="product.image || 'assets/icon/favicon.png'"/>
+  <ion-button expand="block" (click)=submit()>Submit</ion-button>
+</ion-content>

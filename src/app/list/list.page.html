@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>List</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="add()">Add</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item *ngFor="let product of productList">
+      <ion-thumbnail slot="start">
+        <img [src]="product.image"/>
+      </ion-thumbnail>
+      <ion-label>
+        <h3>{{ product.name }}</h3>
+        <p>RM {{ product.price }}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+   <!-- fab placed to the bottom end -->
+   <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="danger" (click)="add()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+</ion-content>
